@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós | Lanne Car</title>
+  <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244,247,255,0.9)), url('https://images.unsplash.com/photo-1550355220-b505511dc4f8?auto=format&fit=crop&q=80') center/cover;
+    }
+    .about-hero h1 { font-size: 3.5rem; margin-bottom: 24px; text-transform: uppercase; color: var(--color-black); }
+    .about-hero h1 span { color: var(--color-blue); }
+    
+    .about-content {
+      display: flex;
+      gap: 64px;
+      padding: 80px 0;
+      align-items: center;
+    }
+    .about-img {
+      flex: 1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-gray);
+      box-shadow: var(--shadow-lg);
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--color-light-gray);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    
+    @media (max-width: 768px) {
+      .about-content { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+        <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+        <li><a href="lojas.html" class="nav-link">Lojas</a></li>
+        <li><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <section class="about-hero">
+    <div class="container">
+      <h1>Conheça a <span>Lanne Car</span></h1>
+      <p style="font-size: 1.2rem; color: var(--color-light-gray);">Excelência e Performance em cada detalhe</p>
+    </div>
+  </section>
+
+  <main class="container about-content">
+    <div class="about-img">
+      <img src="https://scontent.fsdu15-1.fna.fbcdn.net/v/t1.15752-9/658913833_1277965440927950_6272884431910999099_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=7k85uNTVcZ8Q7kNvwFDtuJt&_nc_oc=Adpxz-jTHtu0lPrFMUqfBICj5xSz1ZbXg2m9lyb0Zw9KEL9shM70l57bdCYYHB-aA6_W2iTBxN6ehCSFsD_rVSWT&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu15-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AEB8iWK_PFGXxmT6kgkQIQz49JunKdGHy92d67z3E6ukQ&oe=69F746B0" alt="Sobre a Lanne Car">
+    </div>
+    <div class="about-text">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">Nossa <span>História</span></h2>
+      <p>A <strong>Lanne Car</strong> oferece soluções profissionais em limpeza e estética automotiva, com produtos desenvolvidos para entregar performance, brilho, proteção e resultado real.</p>
+      <p>A marca atende clientes exigentes, profissionais da estética automotiva e apaixonados por carros. Nosso catálogo abrange desde shampoos extremamente eficientes, até ceras e finalizadores premium que restauram o brilho original de qualquer veículo.</p>
+      <p>Buscamos incessantemente a excelência. Cada fórmula é pensada para maximizar o resultado com menor esforço e maior durabilidade. Se o seu objetivo é o melhor para seu veículo, você encontrou a parceria ideal em nós.</p>
+      <div style="margin-top: 32px;">
+        <a href="produtos.html" class="btn btn-primary">Conheça nossos produtos</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 16px;">LANNE<span>CAR</span></a>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem;">Especializada em produtos automotivos.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Links Rápidos</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Catálogo</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="lojas.html">Lojas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

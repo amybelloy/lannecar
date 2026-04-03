@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Comprar | Lanne Car</title>
+  <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .support-header {
+      padding: 160px 0 60px;
+      text-align: center;
+      background: var(--color-soft-gray);
+    }
+    .support-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 0 100px;
+    }
+    .step-card {
+      background: var(--color-white);
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-gray);
+      margin-bottom: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--color-blue);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-text h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--color-black);
+    }
+    .step-text p {
+      color: var(--color-light-gray);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 576px) {
+      .step-card { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        <li><a href="lojas.html" class="nav-link">Lojas</a></li>
+        <li><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <div class="support-header">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: 0;">Como <span>Comprar</span></h1>
+    </div>
+  </div>
+
+  <main class="container support-content">
+    
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h2>Escolha seus produtos</h2>
+        <p>Navegue pelo nosso catálogo ou categorias. Caso precise de ajuda técnica, verifique os detalhes na página do produto onde tem modo de uso e descrição.</p>
+      </div>
+    </div>
+    
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h2>Fale com um Consultor (Opcional)</h2>
+        <p>Se tiver dúvidas, clique no ícone do WhatsApp. Nosso time está pronto para indicar a melhor solução para a estética do seu veículo.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h2>Efetue o Pagamento</h2>
+        <p>Na página do produto, é possível usar o botão "Pagar Agora" para ser direcionado para o link seguro de pagamento, ou fechar o pedido diretamente no WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h2>Receba ou Retire</h2>
+        <p>Você pode optar por receber em casa, de forma rápida e segura, ou retirar em uma das nossas lojas físicas (Contagem ou Ibirité).</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="produtos.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Ir para produtos</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

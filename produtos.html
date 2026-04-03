@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Produtos | Lanne Car</title>
+  <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .catalog-header {
+      padding: 120px 0 40px;
+      text-align: center;
+      background: var(--color-soft-gray);
+      border-bottom: 1px solid var(--color-gray);
+    }
+    
+    .catalog-container {
+      display: flex;
+      gap: 32px;
+      padding: 40px 0;
+      align-items: flex-start;
+    }
+
+    .catalog-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      background: var(--color-white);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-gray);
+      position: sticky;
+      top: 100px;
+      box-shadow: var(--shadow);
+    }
+    
+    .sidebar-title {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-gray);
+      color: var(--color-black);
+    }
+
+    .category-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .category-btn {
+      background: none;
+      border: none;
+      color: var(--color-light-gray);
+      text-align: left;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .category-btn:hover {
+      background: var(--color-blue-light);
+      color: var(--color-blue);
+    }
+    .category-btn.active {
+      background: var(--color-blue);
+      color: var(--color-white);
+    }
+
+    .catalog-main {
+      flex: 1;
+    }
+
+    .catalog-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-gray);
+      background: var(--color-white);
+      color: var(--color-black);
+      font-family: var(--font-body);
+      box-shadow: var(--shadow);
+    }
+
+    .sort-select {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-gray);
+      background: var(--color-white);
+      color: var(--color-black);
+      font-family: var(--font-body);
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 48px;
+      color: var(--color-light-gray);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .catalog-container {
+        flex-direction: column;
+      }
+      .catalog-sidebar {
+        width: 100%;
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="produtos.html" class="nav-link active">Produtos</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        <li><a href="lojas.html" class="nav-link">Lojas</a></li>
+        <li><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">WhatsApp</a>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <div class="catalog-header">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: 0;">Nossos <span>Produtos</span></h1>
+    </div>
+  </div>
+
+  <main class="container catalog-container">
+    <aside class="catalog-sidebar">
+      <h2 class="sidebar-title">Categorias</h2>
+      <div class="category-list" id="category-list">
+        <!-- Rendered via JS -->
+      </div>
+    </aside>
+
+    <div class="catalog-main">
+      <div class="catalog-controls">
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar produtos...">
+        <select id="sort-select" class="sort-select">
+          <option value="popular">Popularidade</option>
+          <option value="recente">Mais recentes</option>
+          <option value="destaque">Em Destaque</option>
+          <option value="menor-preco">Menor Preço</option>
+          <option value="maior-preco">Maior Preço</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered via JS -->
+      </div>
+      
+      <div style="text-align: center; margin-top: 48px;">
+        <button id="load-more-btn" class="btn btn-secondary" style="display: none;">Carregar mais</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 16px;">LANNE<span>CAR</span></a>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem;">Especializada em produtos automotivos.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Links Rápidos</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="produtos.html">Catálogo</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="lojas.html">Lojas Físicas</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Suporte</h3>
+          <div class="footer-links">
+            <a href="como-comprar.html">Como Comprar</a>
+            <a href="politica.html">Política</a>
+            <a href="contato.html">Contato</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('products-grid');
+      const catList = document.getElementById('category-list');
+      const searchInput = document.getElementById('search-input');
+      const sortSelect = document.getElementById('sort-select');
+      
+      let currentCategory = "Todos";
+      let searchQuery = "";
+      let currentSort = "popular";
+
+      // Parse URL parameters for category
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCat = urlParams.get('categoria');
+      if (urlCat && lanneCategories.includes(urlCat)) {
+        currentCategory = urlCat;
+      }
+
+      // Render Categories Filter
+      lanneCategories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `category-btn ${cat === currentCategory ? 'active' : ''}`;
+        btn.textContent = cat;
+        btn.onclick = () => {
+          document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = cat;
+          renderProducts();
+        };
+        catList.appendChild(btn);
+      });
+
+      // Search functionality
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        renderProducts();
+      });
+
+      // Sort functionality
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderProducts();
+      });
+
+      function parsePrice(priceStr) {
+        if (priceStr === "Consulte") return 999999;
+        return parseFloat(priceStr.replace(',', '.'));
+      }
+
+      function renderProducts() {
+        let filtered = lanneProducts.filter(p => {
+          const matchCat = currentCategory === "Todos" || p.category === currentCategory;
+          const matchSearch = p.name.toLowerCase().includes(searchQuery) || p.short_desc.toLowerCase().includes(searchQuery);
+          return matchCat && matchSearch;
+        });
+
+        // Apply Sorting
+        filtered.sort((a, b) => {
+          if (currentSort === "menor-preco") {
+            return parsePrice(a.price) - parsePrice(b.price);
+          } else if (currentSort === "maior-preco") {
+            return parsePrice(b.price) - parsePrice(a.price);
+          } else if (currentSort === "destaque") {
+            return (a.featured === b.featured) ? 0 : a.featured ? -1 : 1;
+          } else if (currentSort === "recente") {
+            return b.id - a.id; 
+          }
+          return 0; // Popular (keep original order)
+        });
+
+        grid.innerHTML = "";
+        
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div class="no-results">Nenhum produto encontrado.</div>`;
+          return;
+        }
+
+        filtered.forEach(p => {
+          grid.innerHTML += createProductCardHTML(p);
+        });
+      }
+
+      renderProducts();
+    });
+  </script>
+</body>
+</html>

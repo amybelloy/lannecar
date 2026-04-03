@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lojas | Lanne Car</title>
+  <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .stores-header {
+      padding: 160px 0 80px;
+      text-align: center;
+      background: var(--color-soft-gray);
+    }
+    
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      padding: 40px 0 100px;
+    }
+    
+    .store-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1px solid var(--color-gray);
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .store-card:hover {
+      border-color: var(--color-blue);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .store-icon {
+      font-size: 3rem;
+      color: var(--color-blue);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .store-icon svg {
+      width: 48px;
+      height: 48px;
+      fill: currentColor;
+    }
+    
+    .store-title {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: var(--color-black);
+    }
+    
+    .store-address {
+      font-size: 1.1rem;
+      color: var(--color-light-gray);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    
+    .store-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        <li><a href="lojas.html" class="nav-link active">Lojas</a></li>
+        <li><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <div class="stores-header">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: 16px;">Nossas <span>Lojas</span></h1>
+      <p style="color: var(--color-light-gray); font-size: 1.1rem;">Venha nos visitar e conhecer de perto o póder da linha Lanne Car.</p>
+    </div>
+  </div>
+
+  <main class="container stores-grid">
+    <div class="store-card">
+      <div class="store-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <h2 class="store-title">Unidade 1 - Contagem</h2>
+      <p class="store-address">Rua Marajó, 887<br>Contagem / MG</p>
+      <div class="store-actions">
+        <a href="https://maps.google.com/?q=Rua+Marajó,+887+Contagem" target="_blank" class="btn btn-secondary">🗺️ Ver no mapa</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+      </div>
+    </div>
+    
+    <div class="store-card">
+      <div class="store-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <h2 class="store-title">Unidade 2 - Ibirité</h2>
+      <p class="store-address">Av. Silva Guimarães, 257<br>Ibirité / MG</p>
+      <div class="store-actions">
+        <a href="https://maps.google.com/?q=Av.+Silva+Guimarães,+257+Ibirité" target="_blank" class="btn btn-secondary">🗺️ Ver no mapa</a>
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 16px;">LANNE<span>CAR</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
