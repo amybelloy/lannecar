@@ -1,264 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalhes do Produto | Lanne Car</title>
-  <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .product-page {
-      padding: 120px 0 80px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto | Lanne Car - Detalhes e Performance</title>
     
-    .breadcrumb {
-      margin-bottom: 24px;
-      color: var(--color-light-gray);
-      font-size: 0.9rem;
-    }
-    .breadcrumb a {
-      color: var(--color-blue);
-    }
-
-    .product-detail-container {
-      display: flex;
-      gap: 48px;
-      background: var(--color-white);
-      padding: 48px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-gray);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .detail-img {
-      flex: 1;
-      max-width: 500px;
-      background: var(--color-soft-gray);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      aspect-ratio: 1;
-      border: 1px solid var(--color-gray);
-    }
-    .detail-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .detail-info {
-      flex: 1;
-    }
-    .detail-category {
-      color: var(--color-blue);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
-    .detail-title {
-      font-size: 2.5rem;
-      color: var(--color-black);
-      margin-bottom: 16px;
-    }
-    .detail-price {
-      font-size: 2.5rem;
-      color: var(--color-blue);
-      font-family: var(--font-heading);
-      font-weight: 800;
-      margin-bottom: 24px;
-    }
-    .detail-desc {
-      font-size: 1.1rem;
-      color: var(--color-light-gray);
-      margin-bottom: 32px;
-      line-height: 1.8;
-    }
-
-    .detail-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-    .detail-actions .btn {
-      width: 100%;
-      padding: 16px;
-      font-size: 1.1rem;
-    }
-
-    .tabs-container {
-      margin-top: 48px;
-    }
-    .tab-buttons {
-      display: flex;
-      gap: 16px;
-      border-bottom: 1px solid var(--color-gray);
-      margin-bottom: 24px;
-    }
-    .tab-btn {
-      background: none;
-      border: none;
-      color: var(--color-light-gray);
-      font-size: 1.1rem;
-      padding: 12px 24px;
-      cursor: pointer;
-      font-family: var(--font-heading);
-      position: relative;
-    }
-    .tab-btn.active {
-      color: var(--color-blue);
-      font-weight: 600;
-    }
-    .tab-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--color-blue);
-    }
-    .tab-content {
-      display: none;
-      color: var(--color-light-gray);
-      line-height: 1.8;
-    }
-    .tab-content.active {
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .product-detail-container {
-        flex-direction: column;
-        padding: 24px;
-      }
-      .detail-img {
-        max-width: 100%;
-      }
-      .detail-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
+    <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="padding-top: 100px;">
 
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">LANNE<span>CAR</span></a>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="produtos.html" class="nav-link">Produtos</a></li>
-        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
-        <li><a href="lojas.html" class="nav-link">Lojas</a></li>
-        <li><a href="contato.html" class="nav-link">Contato</a></li>
-      </ul>
-      <div class="header-actions">
-        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
-        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">WhatsApp</a>
-      </div>
-      <button class="mobile-menu-btn">☰</button>
+    <!-- Menu Mobile Overlay -->
+    <div class="menu-overlay" id="mobile-menu">
+        <button class="menu-close" id="close-menu">&times;</button>
+        <div class="container">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-link"><span>01</span> HOME</a>
+                <a href="produtos.html" class="mobile-link"><span>02</span> PRODUTOS</a>
+                <a href="sobre.html" class="mobile-link"><span>03</span> SOBRE</a>
+                <a href="lojas.html" class="mobile-link"><span>04</span> ONDE ENCONTRAR</a>
+                <a href="contato.html" class="mobile-link"><span>05</span> CONTATO</a>
+            </nav>
+        </div>
     </div>
-  </header>
 
-  <main class="product-page container" id="product-root">
-    <!-- Rendered via JS -->
-    <div style="text-align: center; padding: 100px;">Carregando detalhes do produto...</div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="index.html" class="logo" style="margin-bottom: 16px;">LANNE<span>CAR</span></a>
-          <p style="color: var(--color-light-gray); font-size: 0.9rem;">Especializada em produtos automotivos.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="products.js"></script>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = parseInt(urlParams.get('id'));
-      const productRoot = document.getElementById('product-root');
-      
-      const product = lanneProducts.find(p => p.id === productId);
-
-      if (!product) {
-        productRoot.innerHTML = `
-          <div style="text-align: center; padding: 100px;">
-            <h2>Produto não encontrado</h2>
-            <br>
-            <a href="produtos.html" class="btn btn-primary">Voltar ao catálogo</a>
-          </div>
-        `;
-        return;
-      }
-
-      productRoot.innerHTML = `
-        <div class="breadcrumb">
-          <a href="index.html">Home</a> / <a href="produtos.html">Produtos</a> / <span>${product.category}</span>
-        </div>
-        
-        <div class="product-detail-container">
-          <div class="detail-img">
-            <img src="${product.image}" alt="${product.name}">
-          </div>
-          
-          <div class="detail-info">
-            <div class="detail-category">${product.category}</div>
-            <h1 class="detail-title">${product.name}</h1>
-            <div class="detail-price">${formatCurrency(product.price)}</div>
-            <p class="detail-desc">${product.short_desc}</p>
-            
-            <div class="detail-actions">
-              <a href="${product.payment_link}" target="_blank" class="btn btn-primary" onclick="alert('Você será redirecionado para o ambiente de pagamento.')">
-                💳 Pagar Agora
-              </a>
-              <a href="#" class="btn btn-secondary js-wpp-link" target="_blank">
-                💬 Atendimento via WhatsApp
-              </a>
+    <!-- Header -->
+    <header id="main-header" class="scrolled">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">LANNE<span>CAR</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="produtos.html" class="nav-link">Produtos</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="lojas.html" class="nav-link">Lojas</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline js-wpp-link" target="_blank">Atendimento</a>
+                <button id="open-menu" style="background:none; border:none; color:inherit; font-size: 1.5rem; cursor:pointer;" class="mobile-only-btn">☰</button>
             </div>
-            <a href="produtos.html" style="color: var(--color-light-gray); margin-top: 16px; display: inline-block;">
-              ← Voltar para todos os produtos
-            </a>
-
-            <div class="tabs-container">
-              <div class="tab-buttons">
-                <button class="tab-btn active" onclick="switchTab(event, 'tab-desc')">Descrição Completa</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-modo')">Modo de Uso</button>
-              </div>
-              <div id="tab-desc" class="tab-content active">
-                <p>O <strong>${product.name}</strong> entrega um resultado profissional surpreendente. Indicado para a limpeza e manutenção automotiva, garantindo brilho e proteção. Aproveite a tecnologia Lanne Car para valorizar a estética do seu veículo.</p>
-                <br>
-                <p><em>* As imagens são ilustrativas. Consulte opções de tamanho e rendimento.</em></p>
-              </div>
-              <div id="tab-modo" class="tab-content">
-                <p>1. Limpe a superfície antes da aplicação.<br>
-                2. Aplique o produto com o auxílio de um aplicador ou flanela de microfibra de maneira uniforme.<br>
-                3. Aguarde o tempo de cura/secagem recomendado e remova o excesso se necessário.<br>
-                4. Para mais dúvidas, consulte as instruções no rótulo.</p>
-              </div>
-            </div>
-
-          </div>
         </div>
-      `;
-    });
+    </header>
 
-    function switchTab(e, tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-      e.target.classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
+    <main class="section">
+        <div class="container" id="product-detail">
+            <!-- Rendered via JS -->
+            <div style="text-align: center; padding: 100px;">Carregando informações do produto...</div>
+        </div>
+
+        <!-- Related Products Section -->
+        <div class="container" style="margin-top: 120px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 80px;">
+            <h2 style="font-size: 2.5rem; text-transform: uppercase; margin-bottom: 40px;">Quem comprou este produto também levou</h2>
+            <div style="display: flex; gap: 32px; overflow-x: auto; padding-bottom: 30px; scrollbar-width: none;" id="related-products">
+                <!-- Rendered via JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--color-black); color: var(--color-white); border-top: 1px solid rgba(255,255,255,0.1); padding: 80px 0 40px;">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;">
+            <div>
+                <a href="index.html" class="logo" style="color: white; margin-bottom: 24px;">LANNE<span>CAR</span></a>
+                <p style="color: var(--color-light-gray); max-width: 400px;">Lanne Car é a marca líder em produtos para estética automotiva, unindo tecnologia de ponta e paixão por carros.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 24px;">Ajuda</h4>
+                <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--color-light-gray);">
+                    <li><a href="contato.html">Suporte</a></li>
+                    <li><a href="contato.html">Dúvidas Frequentes</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

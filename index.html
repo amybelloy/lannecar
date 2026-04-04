@@ -3,366 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lanne Car | Produtos Automotivos de Alta Performance</title>
+  <title>Lanne Car | Potência Máxima na Limpeza Automotiva</title>
   
-  <meta name="description" content="Lanne Car oferece soluções profissionais em limpeza e estética automotiva. Produtos com alta performance, brilha, proteção e resultado real.">
+  <meta name="description" content="Lanne Car oferece o que há de mais moderno em limpeza técnica e estética automotiva. Brilho extremo, proteção e resultado profissional.">
   <link rel="icon" type="image/png" href="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" />
+  
+  <!-- styles -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Home specific styles */
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(244,247,255,0.9) 100%), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80') center/cover no-repeat;
-      padding-top: 80px;
-    }
-    .hero-content {
-      max-width: 800px;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 24px;
-      color: var(--color-black);
-      text-transform: uppercase;
-    }
-    .hero h1 span {
-      color: var(--color-blue);
-      display: block;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--color-light-gray);
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    
-    .differentials {
-      background-color: var(--color-soft-gray);
-      border-top: 1px solid var(--color-gray);
-      border-bottom: 1px solid var(--color-gray);
-    }
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-    }
-    .diff-card {
-      text-align: center;
-      padding: 40px 32px;
-      background-color: var(--color-white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-gray);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    .diff-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-blue);
-    }
-    .diff-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--color-blue-light);
-      border-radius: 50%;
-      color: var(--color-blue);
-    }
-    .diff-icon svg {
-      width: 32px;
-      height: 32px;
-      fill: currentColor;
-    }
-    .diff-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      color: var(--color-black);
-    }
-
-    .category-showcase {
-      display: flex;
-      gap: 32px;
-      overflow-x: auto;
-      padding: 20px 24px 40px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .category-showcase::-webkit-scrollbar { display: none; }
-    
-    .cat-circle {
-      flex: 0 0 auto;
-      width: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      text-align: center;
-    }
-    .cat-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: var(--color-white);
-      border: 2px solid var(--color-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-blue);
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-    }
-    .cat-img svg {
-      width: 40px;
-      height: 40px;
-      fill: currentColor;
-    }
-    .cat-circle:hover .cat-img {
-      border-color: var(--color-blue);
-      background: var(--color-blue-light);
-      transform: scale(1.1);
-    }
-    .cat-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--color-black);
-      white-space: nowrap;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .cta-banner {
-      background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-secondary-blue) 100%);
-      padding: 80px 0;
-      text-align: center;
-      color: white;
-    }
-    .cta-banner h2 {
-      font-size: 3rem;
-      margin-bottom: 24px;
-    }
-    .cta-banner .btn-accent {
-      background-color: white;
-      color: var(--color-blue);
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .category-showcase { justify-content: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
+  <!-- Menu Mobile Overlay -->
+  <div class="menu-overlay" id="mobile-menu">
+    <button class="menu-close" id="close-menu">&times;</button>
+    <div class="container">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-link"><span>01</span> HOME</a>
+        <a href="produtos.html" class="mobile-link"><span>02</span> PRODUTOS</a>
+        <a href="sobre.html" class="mobile-link"><span>03</span> SOBRE</a>
+        <a href="lojas.html" class="mobile-link"><span>04</span> ONDE ENCONTRAR</a>
+        <a href="contato.html" class="mobile-link"><span>05</span> CONTATO</a>
+      </nav>
+      <div style="margin-top: 60px;">
+        <a href="#" class="btn btn-primary js-wpp-link" target="_blank" style="width: 100%;">FALAR NO WHATSAPP</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
-  <header>
-    <div class="container header-container">
+  <header class="dark-hero" id="main-header">
+    <div class="container header-inner">
       <a href="index.html" class="logo">LANNE<span>CAR</span></a>
       <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Início</a></li>
         <li><a href="produtos.html" class="nav-link">Produtos</a></li>
         <li><a href="sobre.html" class="nav-link">Sobre</a></li>
         <li><a href="lojas.html" class="nav-link">Lojas</a></li>
         <li><a href="contato.html" class="nav-link">Contato</a></li>
       </ul>
       <div class="header-actions">
-        <a href="produtos.html" class="btn btn-secondary">Ver Catálogo</a>
-        <a href="#" class="btn btn-primary js-wpp-link" target="_blank">Atendimento</a>
+        <a href="#" class="btn btn-outline js-wpp-link" target="_blank">WhatsApp</a>
+        <a href="produtos.html" class="btn btn-primary">Comprar</a>
+        <button id="open-menu" style="background:none; border:none; color:inherit; font-size: 1.5rem; cursor:pointer; display:none;" class="mobile-only-btn">☰</button>
       </div>
-      <button class="mobile-menu-btn">☰</button>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Cinematográfico -->
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Resultado profissional <span>para seu carro</span></h1>
-          <p>Potencialize o brilho e a proteção do seu veículo com a linha premium Lanne Car. Desenvolvida para entusiastas e profissionais.</p>
-          <div class="hero-buttons">
-            <a href="produtos.html" class="btn btn-primary">Ver Produtos</a>
-            <a href="#" class="btn btn-secondary js-wpp-link" target="_blank">Falar conosco</a>
-          </div>
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://images.pexels.com/video-files/3011311/3011311-uhd_2560_1440_24fps.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1>POTÊNCIA MÁXIMA NA LIMPEZA AUTOMOTIVA</h1>
+        <p>Alta performance, brilho e resultado profissional em cada detalhe.</p>
+        <div class="hero-btns">
+          <a href="produtos.html" class="btn btn-primary">Ver produtos</a>
+          <a href="#" class="btn btn-outline js-wpp-link" target="_blank">Comprar no WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- Differentials -->
-    <section class="section differentials">
+    <!-- Scroll Horizontal Interativo -->
+    <section class="horizontal-scroll-section" id="featured-section">
+      <div class="container scroll-header">
+        <div class="scroll-title">
+          <span style="color: var(--color-primary); font-weight: 800; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 2px;">Venda Mais</span>
+          <h2>Destaques da Temporada</h2>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-outline" style="padding: 10px 15px;" id="scroll-prev">←</button>
+          <button class="btn btn-outline" style="padding: 10px 15px;" id="scroll-next">→</button>
+        </div>
+      </div>
+      
+      <div class="scroll-container" id="featured-scroll">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Seção de Impacto (Marca) -->
+    <section class="impact-section">
       <div class="container">
-        <div class="diff-grid">
-          <div class="diff-card">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <h2>8k+</h2>
+            <p>Carros revitalizados com nossos produtos premium em todo o Brasil.</p>
+          </div>
+          <div class="impact-item">
+            <h2>100%</h2>
+            <p>Resultado profissional. Fórmulas testadas por detailers especialistas.</p>
+          </div>
+          <div class="impact-item">
+            <h2>24h</h2>
+            <p>Brilho que impressiona e proteção que dura contra as ações do tempo.</p>
+          </div>
+        </div>
+        <div style="margin-top: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">
+          <h2 style="font-size: 3rem; margin-bottom: 30px;">"LIMPEZA PESADA DE VERDADE, RESULTADO QUE VOCÊ ENXERGA"</h2>
+          <a href="produtos.html" class="btn btn-primary">Explorar toda a linha</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onde nos encontrar (Mapa) -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container" style="text-align: center; margin-bottom: 60px;">
+        <span style="color: var(--color-primary); font-weight: 800; font-family: var(--font-heading); text-transform: uppercase;">Unidades</span>
+        <h2 style="font-size: 3rem; text-transform: uppercase;">Encontre a Lanne Car mais perto de você</h2>
+      </div>
+      
+      <div id="map-section">
+        <div class="map-card">
+          <h2>Nossas Lojas</h2>
+          <div class="store-list">
+            <div class="store-item">
+              <h4>Contagem</h4>
+              <p>Rua Marajó, 887 - Novo Eldorado</p>
+              <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <a href="https://maps.google.com" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.7rem;">Ver Rota</a>
+                <a href="#" class="btn btn-primary js-wpp-link" style="padding: 8px 16px; font-size: 0.7rem;">WhatsApp</a>
+              </div>
             </div>
-            <h3>Alta Performance</h3>
-            <p>Fórmulas premium desenvolvidas para resultados visíveis e duradouros.</p>
-          </div>
-          <div class="diff-card">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="store-item">
+              <h4>Ibirité</h4>
+              <p>Av. Silva Guimarães, 257 - Centro</p>
+              <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <a href="https://maps.google.com" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.7rem;">Ver Rota</a>
+                <a href="#" class="btn btn-primary js-wpp-link" style="padding: 8px 16px; font-size: 0.7rem;">WhatsApp</a>
+              </div>
             </div>
-            <h3>Proteção Extrema</h3>
-            <p>Mantenha seu veículo protegido contra ações do tempo e desgaste natural.</p>
-          </div>
-          <div class="diff-card">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24"><path d="M18 6h-2V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H6c-1.1 0-2 .9-2 2v1h16V8c0-1.1-.9-2-2-2zM8 4h6v2H8V4zm12 7H4v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8z"/></svg>
-            </div>
-            <h3>Qualidade Profissional</h3>
-            <p>A escolha certa para centros de estética automotiva e detailers profissionais.</p>
           </div>
         </div>
+        <div id="map" style="width: 100%; height: 100%;"></div>
       </div>
     </section>
 
-    <!-- Categories Showcase -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Busque por <span>Categorias</span></h2>
-        <div class="category-showcase" id="home-categories">
-          <!-- Rendered via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="section" style="background-color: var(--color-soft-gray); border-top: 1px solid var(--color-gray); border-bottom: 1px solid var(--color-gray);">
-      <div class="container">
-        <h2 class="section-title">Produtos em <span>Destaque</span></h2>
-        <div class="products-grid" id="featured-products">
-          <!-- Rendered via JS -->
-        </div>
-        <div style="text-align: center; margin-top: 48px;">
-          <a href="produtos.html" class="btn btn-primary">Ver todo o catálogo</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section">
-      <div class="container" style="display: flex; gap: 48px; align-items: center; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;">
-          <img src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&q=80" alt="Sobre a Lanne Car" style="border-radius: var(--radius-lg); border: 1px solid var(--color-gray); box-shadow: var(--shadow-lg);">
-        </div>
-        <div style="flex: 1; min-width: 300px;">
-          <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Sobre a <span>Marca</span></h2>
-          <p style="font-size: 1.1rem; color: var(--color-light-gray); margin-bottom: 24px;">A Lanne Car oferece soluções profissionais em limpeza e estética automotiva, com produtos desenvolvidos para entregar performance, brilho, proteção e resultado real.</p>
-          <a href="sobre.html" class="btn btn-secondary">Conheça nossa história</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="cta-banner">
-      <div class="container">
-        <h2>Pronto para transformar seu carro?</h2>
-        <a href="produtos.html" class="btn btn-accent">Comprar Agora</a>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <a href="index.html" class="logo" style="margin-bottom: 16px;">LANNE<span>CAR</span></a>
-          <p style="color: var(--color-light-gray); font-size: 0.9rem;">Especializada em produtos automotivos, estética automotiva e acessórios de alta performance.</p>
-        </div>
-        <div class="footer-col">
-          <h3>Links Rápidos</h3>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="produtos.html">Catálogo</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="lojas.html">Lojas Físicas</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h3>Suporte</h3>
-          <div class="footer-links">
-            <a href="como-comprar.html">Como Comprar</a>
-            <a href="politica.html">Política de Privacidade</a>
-            <a href="contato.html">Contato</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h3>Contato</h3>
-          <div class="footer-links">
-            <p style="color: var(--color-light-gray); font-size: 0.9rem;">(31) 9999-9999</p>
-            <p style="color: var(--color-light-gray); font-size: 0.9rem;">contato@lannecar.com.br</p>
-            <div style="display: flex; gap: 12px; margin-top: 12px; color: var(--color-blue);">
-              <a href="#" style="width: 24px; height: 24px;">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.75 2h8.5c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2h-8.5c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm0 2v16h8.5V4h-8.5zM12 18c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
-              </a>
-              <a href="#" style="width: 24px; height: 24px;">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-              </a>
-            </div>
-          </div>
+  <footer style="background: var(--color-black); color: var(--color-white); border-top: 1px solid rgba(255,255,255,0.1); padding: 80px 0 40px;">
+    <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;">
+      <div>
+        <a href="index.html" class="logo" style="color: white; margin-bottom: 24px;">LANNE<span>CAR</span></a>
+        <p style="color: var(--color-light-gray); max-width: 400px;">Lanne Car é a marca líder em produtos para estética automotiva, unindo tecnologia de ponta e paixão por carros.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 24px; text-transform: uppercase;">Navegação</h4>
+        <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--color-light-gray);">
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="lojas.html">Nossas Lojas</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 24px; text-transform: uppercase;">Siga-nos</h4>
+        <div style="display: flex; gap: 15px;">
+          <a href="#" style="width: 40px; height: 40px; background: var(--color-dark-gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">IG</a>
+          <a href="#" style="width: 40px; height: 40px; background: var(--color-dark-gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">FB</a>
+          <a href="#" style="width: 40px; height: 40px; background: var(--color-dark-gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">YT</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lanne Car. Todos os direitos reservados.</p>
-      </div>
+    </div>
+    <div class="container" style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem;">
+      <p>&copy; 2026 LANNE CAR PRODUTOS DE LIMPEZA. Todos os direitos reservados.</p>
     </div>
   </footer>
 
+  <!-- Floating WhatsApp -->
+  <a href="#" class="floating-wpp js-wpp-link" target="_blank">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="products.js"></script>
   <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Load Categories Showcase
-      const showcaseContainer = document.getElementById('home-categories');
-      const showcaseCategories = [
-        "Shampoo", "Abrilhantadores", "Desengraxantes", "Tratamentos", 
-        "Aditivos e Lubrificantes", "Ar Condicionado", "Ceras", "Outros"
-      ];
-      
-      const categoryIcons = {
-        "Shampoo": `<svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v2H6v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6h-4V4c0-1.1-.9-2-2-2zM12 4c.55 0 1 .45 1 1v1h-2V5c0-.55.45-1 1-1z"/></svg>`,
-        "Abrilhantadores": `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
-        "Desengraxantes": `<svg viewBox="0 0 24 24"><path d="M19 13h-4V7l-5 7h4v6l5-7z"/></svg>`,
-        "Tratamentos": `<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>`,
-        "Aditivos e Lubrificantes": `<svg viewBox="0 0 24 24"><path d="M18 10V8H6v2H4v12h16V10h-2zM8 12h8v8H8v-8z"/></svg>`,
-        "Ar Condicionado": `<svg viewBox="0 0 24 24"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg>`,
-        "Ceras": `<svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>`,
-        "Outros": `<svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>`
-      };
-      
-      showcaseCategories.forEach(cat => {
-        const link = document.createElement('a');
-        link.href = `produtos.html?categoria=${encodeURIComponent(cat)}`;
-        link.className = 'cat-circle';
-        link.innerHTML = `
-          <div class="cat-img">${categoryIcons[cat] || `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`}</div>
-          <div class="cat-name">${cat}</div>
-        `;
-        showcaseContainer.appendChild(link);
-      });
-
-      // Load Featured Products (limit 8)
-      const featuredContainer = document.getElementById('featured-products');
-      const featuredProds = lanneProducts.filter(p => p.featured).slice(0, 8);
-      
-      featuredProds.forEach(product => {
-        featuredContainer.innerHTML += createProductCardHTML(product);
-      });
-    });
-  </script>
 </body>
 </html>
