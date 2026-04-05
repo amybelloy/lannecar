@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';
         });
 
+        // Close on overlay click
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
         // Close menu on link click
         const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
         mobileLinks.forEach(link => {
@@ -84,15 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const featured = window.lanneProducts.filter(p => p.featured);
         scrollContainer.innerHTML = featured.map(p => `
             <div class="product-slide">
-                <span class="slide-category">${p.category}</span>
                 <div class="slide-img">
                     <img src="${p.image}" alt="${p.name}" loading="lazy">
                 </div>
                 <div class="slide-content">
+                    <div class="slide-rating">★★★★★</div>
                     <h3>${p.name}</h3>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-                        <span class="slide-price">R$ ${p.price}</span>
-                        <a href="produto.html?id=${p.id}" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.7rem;">Ver Detalhes</a>
+                    <p class="slide-description">${p.short_desc || ''}</p>
+                    <span class="slide-price">R$ ${p.price}</span>
+                    <div class="slide-actions">
+                        <a href="produto.html?id=${p.id}" class="btn btn-outline">Ver Detalhes</a>
+                        <a href="${p.payment_link || '#'}" class="btn btn-primary">Pagar Agora</a>
                     </div>
                 </div>
             </div>
@@ -132,9 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- WhatsApp Links --- */
     const wppLinks = document.querySelectorAll('.js-wpp-link');
-    const phoneNumber = "5531999999999"; // Substituir pelo real
+    const phoneNumber = "553195519073"; 
+    const wppMessage = "Oi Aline. Eu tenho interesse nos produtos da Lanne";
     wppLinks.forEach(link => {
-        link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('Olá! Vim pelo site e gostaria de mais informações.')}`;
+        link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(wppMessage)}`;
     });
 
     /* --- Page specific - Category Filtering (produtos.html) --- */
@@ -178,14 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterContainer = document.getElementById('category-filters');
         if (!filterContainer) return;
 
-        window.lanneCategories.forEach(cat => {
+        window.lanneCategories.forEach((cat, index) => {
             const btn = document.createElement('button');
-            btn.className = 'btn btn-outline filter-btn';
-            btn.style = 'padding: 8px 16px; font-size: 0.7rem; white-space: nowrap;';
+            // By default, the first category (Todos) should be active
+            btn.className = `btn filter-btn ${index === 0 ? 'btn-primary' : 'btn-outline'}`;
+            btn.style = 'padding: 8px 16px; font-size: 0.7rem; white-space: nowrap; transition: 0.3s;';
             btn.textContent = cat;
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('btn-primary'));
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-outline');
+                });
                 btn.classList.add('btn-primary');
+                btn.classList.remove('btn-outline');
                 renderAllProducts(cat);
             });
             filterContainer.appendChild(btn);
@@ -210,34 +226,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product) {
             document.title = `${product.name} | Lanne Car`;
             productDetailContainer.innerHTML = `
-                <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px;">
+                <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 30px; align-items: start; max-width: 1100px; margin: 0 auto;">
                     <div class="product-gallery">
-                        <div style="background: var(--color-soft-gray); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1; border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div style="background: #fff; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 1; border: 1px solid rgba(0,0,0,0.08); padding: 15px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                            <img src="https://scontent.fsdu4-1.fna.fbcdn.net/v/t1.15752-9/660948894_961454283005131_7601419460369613948_n.png?stp=dst-png_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mJZyaBDKS7AQ7kNvwHvlDQ8&_nc_oc=Adqmt0sM0Fbmg-bQr2sOGzH-_mkMLDlBms2aUweGAhyrxts8bx9t1x0LIhRByRxDQFmzbzq97hFnvZgyqr-ss69I&_nc_ad=z-m&_nc_cid=1295&_nc_zt=23&_nc_ht=scontent.fsdu4-1.fna&_nc_ss=7a32e&oh=03_Q7cD5AGkzr9L77WL-gCHNC8WJWsJtWjnVPq7baq5R8Hk63WqEA&oe=69F732B8" style="position: absolute; top: 10px; left: 10px; width: 30px; opacity: 0.8;">
                         </div>
                     </div>
-                    <div class="product-info-details">
-                        <span style="color: var(--color-primary); font-weight: 800; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 2px;">${product.category}</span>
-                        <h1 style="font-size: 3rem; margin: 10px 0 20px;">${product.name}</h1>
-                        <p style="color: var(--color-light-gray); font-size: 1.1rem; margin-bottom: 30px;">${product.short_desc}</p>
+                    <div class="product-info-details" style="padding-top: 5px;">
+                        <span style="color: var(--color-primary); font-weight: 700; font-size: 0.75rem; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;">${product.category}</span>
+                        <h1 style="font-size: 1.6rem; margin: 4px 0 8px; font-weight: 800; line-height: 1.1;">${product.name}</h1>
+                        <p style="color: var(--color-light-gray); font-size: 0.85rem; margin-bottom: 15px; line-height: 1.4;">${product.short_desc}</p>
                         
-                        <div style="margin-bottom: 40px;">
-                            <span style="font-size: 0.9rem; color: var(--color-light-gray); text-transform: uppercase;">Preço à vista</span>
-                            <div style="font-size: 3.5rem; font-weight: 900; font-family: var(--font-heading);">R$ ${product.price}</div>
+                        <div style="margin-bottom: 20px;">
+                            <span style="font-size: 0.7rem; color: var(--color-light-gray); text-transform: uppercase; letter-spacing: 0.5px;">Preço à vista</span>
+                            <div style="font-size: 2rem; font-weight: 900; font-family: var(--font-heading); color: #1a1a1a;">R$ ${product.price}</div>
                         </div>
-
-                        <div style="display: flex; gap: 20px;">
-                            <a href="${product.payment_link === '#' ? 'javascript:void(0)' : product.payment_link}" class="btn btn-primary" style="flex: 1; padding: 20px;">COMPRAR AGORA</a>
-                            <a href="#" class="btn btn-outline js-wpp-link" style="flex: 1; padding: 20px;">SOLICITAR COTAÇÃO</a>
+ 
+                        <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                            <a href="${product.payment_link === '#' ? 'javascript:void(0)' : product.payment_link}" class="btn btn-primary" style="flex: 1.2; padding: 10px 15px; font-size: 0.75rem; font-weight: 700;">COMPRAR AGORA</a>
+                            <a href="#" class="btn btn-outline js-wpp-link" style="flex: 1; padding: 10px 15px; font-size: 0.75rem; font-weight: 700;">COTAÇÃO</a>
                         </div>
-
-                        <div style="margin-top: 60px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 40px;">
-                            <h3 style="margin-bottom: 20px; text-transform: uppercase;">Descrição Técnica</h3>
-                            <ul style="color: var(--color-light-gray); display: flex; flex-direction: column; gap: 10px;">
-                                <li style="display: flex; align-items: center; gap: 10px;"><div style="width:8px; height:8px; background:var(--color-primary); border-radius:50%;"></div> Alta capacidade de limpeza</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><div style="width:8px; height:8px; background:var(--color-primary); border-radius:50%;"></div> Versatilidade</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><div style="width:8px; height:8px; background:var(--color-primary); border-radius:50%;"></div> Praticidade</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><div style="width:8px; height:8px; background:var(--color-primary); border-radius:50%;"></div> Economia</li>
+ 
+                        <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 15px;">
+                            <h3 style="margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: #444;">Descrição Técnica</h3>
+                            <ul style="color: var(--color-light-gray); display: flex; flex-direction: column; gap: 5px; font-size: 0.75rem;">
+                                <li style="display: flex; align-items: center; gap: 8px;"><div style="width:5px; height:5px; background:var(--color-primary); border-radius:50%;"></div> Alta capacidade de limpeza</li>
+                                <li style="display: flex; align-items: center; gap: 8px;"><div style="width:5px; height:5px; background:var(--color-primary); border-radius:50%;"></div> Versatilidade</li>
+                                <li style="display: flex; align-items: center; gap: 8px;"><div style="width:5px; height:5px; background:var(--color-primary); border-radius:50%;"></div> Praticidade</li>
+                                <li style="display: flex; align-items: center; gap: 8px;"><div style="width:5px; height:5px; background:var(--color-primary); border-radius:50%;"></div> Economia</li>
                             </ul>
                         </div>
                     </div>
